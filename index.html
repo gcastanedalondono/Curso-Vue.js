@@ -6,18 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <div id="app"></div>
-  <script>
-    const vm = Vue.createApp({
-         data(){
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>    
+  <!-- Aquí se descarga desdee el CDN -->
+  <div id="app">{{text}}</div>  <!-- Ese text dice que se prodrá leer una expresión de JS -->
+  
+  <!-- Aquí es donde va e el cuento del framework -->
+  <script> // Se utilizará Vue como una librería más
+     const vm = Vue.createApp({
+        data(){  //permite devolver cualquier valor
             return{
-               text:"HaShem melech!"   
+                  text:"Baruch HaShem"
             };
-         },
-         template:`<div v-text ="text"></div>`  
-    }).mount("#app");
-
+        }
+     }).mount("#app");    //toma la instancia de Vue y genera una nueva aplicación
+       // Vue permite de una manera muy declarativa decir que se le hace a los diferentes elementos del DOM  
+     console.log(vm);
   </script>
 </body>
 </html>
