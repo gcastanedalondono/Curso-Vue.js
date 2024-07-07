@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>    
+ 
+  <div id="app"></div> 
+  
+  <script> 
+     const vm = Vue.createApp({
+        data(){  
+            return{
+                  text:"<p>Bendito sea tu nombre hoy y siempre, quiero adjuntarme a ti</p>"
+                  };
+        },
+        template: `<div v-html ='text'></div>`// es la sintaxis de template para mostrar en pantalla desde aquí sin tanto html, aquí podemos agregar un botón, parrafo
+     }).mount("#app");   
+   //Esto del template nos sirve para hacer cosas más allá de los que nos ofrece el html      
+   //Cuando utilizamos la directiva v-once, los textos se renderizan pero no se dejan actualizar en su valor   
+   //Si en la variable texto quiero cargar sintaxis de Html no da, asi que toca utilizar in directiva de Vue
+   //los valores de v-html, no deben venir de input de usuario porque pueden tener un script malicioso
+  </script>
+</body>
+</html>
